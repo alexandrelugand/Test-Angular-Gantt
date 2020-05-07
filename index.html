@@ -1,0 +1,154 @@
+<html >
+<head>
+    <script type='text/javascript' src="node_modules/angular/angular.min.js"></script>
+    <script type='text/javascript' src="node_modules/moment/moment.js"></script>
+    <script type='text/javascript' src="node_modules/angular-moment/angular-moment.min.js"></script>
+    <script type='text/javascript' src="node_modules/moment-range/dist/moment-range.min.js"></script>
+
+    <script type='text/javascript' src="node_modules/angular-ui-tree/dist/angular-ui-tree.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/angular-ui-tree/dist/angular-ui-tree.min.css">
+
+    <script type='text/javascript' src="node_modules/angular-native-dragdrop/draganddrop.min.js"></script>
+
+    <script type='text/javascript' src="node_modules/css-element-queries/src/ElementQueries.js"></script>
+    <script type='text/javascript' src="node_modules/css-element-queries/src/ResizeSensor.js"></script>
+
+    <script type='text/javascript' src="node_modules/jsplumb/dist/js/jsPlumb-2.2.0-min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script type='text/javascript' src="node_modules/angular-gantt/assets/angular-gantt.js"></script>
+    <script type='text/javascript' src="node_modules/angular-gantt/assets/angular-gantt-plugins.js"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/angular-gantt/assets/angular-gantt.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/angular-gantt/assets/angular-gantt-plugins.css">
+</head>
+<body ng-app="gantt.demo" ng-cloak>
+    <div ng-controller="main" class="container-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a href="" bs-collapse-toggle="" data-toggle="collapse">Options</a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse collapse am-collapse in" bs-collapse-target>
+                                <div class="panel-body" style="position: relative;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>    
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a href="" bs-collapse-toggle="" data-toggle="collapse">Gantt</a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse collapse am-collapse in" bs-collapse-target>
+                                <div class="panel-body no-padding " style="position: relative;">
+                                    <div gantt
+                                    data="data"
+                                    timespans="timespans"
+                                    show-side="options.labelsEnabled"
+                                    daily="options.daily"
+                                    filter-task="{'name': options.filterTask}"
+                                    filter-row="{'name': options.filterRow}"
+                                    sort-mode="options.sortMode"
+                                    view-scale="options.scale"
+                                    column-width="getColumnWidth(options.width, options.scale, options.zoom)"
+                                    auto-expand="options.autoExpand"
+                                    task-out-of-range="options.taskOutOfRange"
+                                    from-date = "options.fromDate"
+                                    to-date = "options.toDate"
+                                    allow-side-resizing = "options.allowSideResizing"
+                                    task-content = "options.taskContentEnabled ? options.taskContent : undefined"
+                                    row-content = "options.rowContentEnabled ? options.rowContent : undefined"
+                                    current-date="options.currentDate"
+                                    current-date-value="options.currentDateValue"
+                                    headers="options.width && options.shortHeaders || options.longHeaders"
+                                    max-height="options.maxHeight || 0"
+                                    time-frames="options.timeFrames"
+                                    date-frames="options.dateFrames"
+                                    time-frames-working-mode="options.timeFramesWorkingMode"
+                                    time-frames-non-working-mode="options.timeFramesNonWorkingMode"
+                                    time-frames-magnet="options.timeFramesMagnet"                                    
+                                    column-magnet="options.columnMagnet">
+                                    <gantt-tree 
+                                        enabled="options.sideMode === 'Tree' || options.sideMode === 'TreeTable'"
+                                        header-content="options.treeHeaderContent"
+                                        keep-ancestor-on-filter-row="true">
+                                    </gantt-tree>
+                                    <gantt-table enabled="options.sideMode === 'Table' || options.sideMode === 'TreeTable'"
+                                        columns="options.sideMode === 'TreeTable' ? options.treeTableColumns : options.columns"
+                                        headers="options.columnsHeaders"
+                                        classes="options.columnsClasses"
+                                        formatters="options.columnsFormatters"
+                                        contents="options.columnsContents"
+                                        header-contents="options.columnsHeaderContents">
+                                    </gantt-table>
+                                    <gantt-corner
+                                        headers-labels="options.corner.headersLabels" 
+                                        headers-labels-templates="options.corner.headersLabelsTemplates">
+                                    </gantt-corner>
+                                    <gantt-groups 
+                                        enabled="options.groupDisplayMode === 'group' || options.groupDisplayMode === 'overview' || options.groupDisplayMode === 'promote'"
+                                        display="options.groupDisplayMode">
+                                    </gantt-groups>
+                                    <gantt-tooltips></gantt-tooltips>
+                                    <gantt-bounds></gantt-bounds>
+                                    <gantt-progress></gantt-progress>
+                                    <gantt-sortable></gantt-sortable>
+                                    <gantt-sections></gantt-sections>
+                                    <gantt-movable 
+                                        enabled="!options.readOnly"
+                                        allow-row-switching="options.movable.allowRowSwitching">
+                                    </gantt-movable>
+                                    <gantt-draw-task
+                                        enabled="options.canDraw"
+                                        move-threshold="2"
+                                        task-factory="options.drawTaskFactory">
+                                    </gantt-draw-task>
+                                    <gantt-overlap></gantt-overlap>
+                                    <gantt-resize-sensor></gantt-resize-sensor>
+                                    <gantt-dependencies
+                                        enabled="options.dependencies.enabled"
+                                        conflict-checker="options.dependencies.conflictChecker"
+                                        read-only="options.readOnly">
+                                    </gantt-dependencies>
+                                 </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                  <!--   <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a href="" bs-collapse-toggle="" data-toggle="collapse">Gantt</a>
+                                </h4>
+                            </div> 
+                            <div class="panel-collapse collapse am-collapse in" bs-collapse-target>
+                                <div class="panel-body" style="position: relative;">-->
+                                    
+                                <!--</div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+       
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+</body>
+</html>

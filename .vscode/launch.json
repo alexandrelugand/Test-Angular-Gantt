@@ -1,0 +1,28 @@
+{
+    // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
+    // Pointez pour afficher la description des attributs existants.
+    // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": ".NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/data-generator/bin/Debug/netcoreapp3.1/data-generator.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}/data-generator",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome",
+            "url": "http://localhost:5500",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}

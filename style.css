@@ -1,0 +1,100 @@
+.container-content {
+    margin: 10px;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
+}
+
+.no-padding {
+   padding: 0;
+}
+
+.gantt-header-columns {
+    height: inherit !important;
+}
+
+.gantt-body {
+    height: inherit !important;
+}
+
+.gantt-task-group,
+.gantt-task-group-left-main,
+.gantt-task-group-right-main {
+    background-color: #DA1F3D !important;
+}
+
+.gantt-task-group-left-symbol,
+.gantt-task-group-right-symbol {
+    border-top: 12px solid #DA1F3D !important;
+}
+
+.project,
+.work-order {
+    font-weight: bold;
+    vertical-align: middle;
+    color: white;
+}
+
+.gantt-row.project .gantt-row-background {
+    background-color: #484848;
+    opacity: 0.85;
+}
+
+.gantt-row.work-order .gantt-row-background {
+    background-color: #DA1F3D;
+    opacity: 0.85;
+}
+
+
+
+
+.gantt-timeframe-holiday {
+    border: solid 2px black;
+    opacity: 0.6;
+}
+
+.gantt-row-milestone {
+    font-weight: bold;
+    vertical-align: middle;
+    color: white;
+}
+
+div.live-table {
+    display: table;
+    width: 100%;
+}
+
+div.live-row {
+    display: table-row;
+}
+
+div.live-cell {
+    display: table-cell;
+    padding: 5px;
+    width: 50%;
+}
+
+textarea.live-task,
+textarea.live-row {
+    width: 100%;
+    height: 300px;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.gantt-task-section.section-1 {
+    background-color: #00b3ee;
+    opacity: 0.5;
+}
+
+.gantt-task-section.section-2 {
+    background-color: #eb9100;
+    opacity: 0.5;
+}
+
+.gantt-task-section.section-3 {
+    background-color: #ee1400;
+    opacity: 0.5;
+}
