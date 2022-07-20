@@ -24,10 +24,10 @@ angular-ui-tree@2.22.5:
   resolved "https://registry.yarnpkg.com/angular-ui-tree/-/angular-ui-tree-2.22.5.tgz#99071fb963feaf2eac11c98e95e40628c135813f"
   integrity sha1-mQcfuWP+ry6sEcmOleQGKME1gT8=
 
-angular@1.5.11:
-  version "1.5.11"
-  resolved "https://registry.yarnpkg.com/angular/-/angular-1.5.11.tgz#8c5ba7386f15965c9acf3429f6881553aada30d6"
-  integrity sha1-jFunOG8VllyazzQp9ogVU6raMNY=
+angular@1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.8.3.tgz#851ad75d5163c105a7e329555ef70c90aa706894"
+  integrity sha512-5qjkWIQQVsHj4Sb5TcEs4WZWpFeVFHXwxEBHUhrny41D8UrBAd6T/6nPPAsLngJCReIOqi95W3mxdveveutpZw==
 
 bootstrap@3.3.7:
   version "3.3.7"
